@@ -1,0 +1,7 @@
+https://en.wikibooks.org/wiki/LaTeX/Hyperlinks
+http://www.cs.stir.ac.uk/~kjt/software/latex/showbst.html
+http://www.ottobib.com/isbn/0878556990
+http://www.mantex.co.uk/2009/06/17/how-to-use-abbreviations/#examples
+http://vimregex.com/#pattern
+http://images.webofknowledge.com/WOK46/help/WOS/V_abrvjt.html
+http://www.thezeitgeistmovement.com/orientation#faq16

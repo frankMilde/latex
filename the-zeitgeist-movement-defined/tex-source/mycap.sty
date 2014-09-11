@@ -1,0 +1,42 @@
+%  MYCAP.STY
+\RequirePackage{ifthen}
+
+%  Fonts fuer Numerierung und Rumpf
+\newcommand{\capfont}[1]{\textit{#1}}
+\newcommand{\fnumfont}[1]{\textbf{#1}}
+
+%  Linksbuendig {} oder zentriert {\centering}
+\newcommand{\capshape}{}
+
+%  Form der Numerierung, Default: "Abbildung 0.3: "
+%  Beispiel "mit Strich abgetrennt":
+%  \renewcommand{\fnumshape}[1]
+%    {\rule{\linewidth}{0.5pt}\\#1 }
+\newcommand{\fnumshape}[1]{#1: }
+
+%  false: Legende direkt nach Numerierung
+%  true: Zeilenumbruch nach Numerierung
+\newboolean{capbreak}  
+\setboolean{capbreak}{false}
+
+\renewcommand{\@makecaption}[2]
+{\vspace{\abovecaptionskip}
+ % Laenge der Legende bestimmen
+ % Nummer abgesetzt: nur Textlaenge zaehlt
+ \ifthenelse{\boolean{capbreak}}  
+   {\sbox{\@tempboxa}
+     {\capfont{#2}}}
+   {\sbox{\@tempboxa}
+     {\fnumfont{\fnumshape{#1}\capfont{#2}}}}
+ % mehrzeiliger Eintrag?
+ \ifthenelse{\lengthtest{\wd\@tempboxa>\hsize}}
+   {{\capshape\fnumfont{\fnumshape{#1}}%
+    \ifthenelse{\boolean{capbreak}}{\\}{}%
+    \capfont{#2}}
+   }
+   {{\capshape\fnumfont{\fnumshape{#1}}%
+    \ifthenelse{\boolean{capbreak}}{\\}{}%
+    \capfont{#2}}
+   }
+ \vspace{\belowcaptionskip}
+}
