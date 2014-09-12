@@ -48,6 +48,6 @@ Todos
 DISCLAIMER
 ==========
 
-Except for red marked text and changes in the reference style, non of
+Except for red marked text and changes in the reference style, **non** of
 the content given in this text is from me. All credits and rights
 belong to the original authors of *The Zeitgeistmovement Defined*.
